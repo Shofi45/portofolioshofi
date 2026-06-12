@@ -537,9 +537,12 @@ span {
     .heading {
         font-size: 4rem; 
     }
-    .heading a{
-        font-size: 2rem;
+   
+    
+    .logo{
+        font-size: 2rem;
     }
+  
 
 
     /* --- PERBAIKAN TAMPILAN HOME HP --- */
@@ -565,8 +568,8 @@ span {
         align-items: center; 
     }
 
-    .home-content h1 {
-        font-size: 4.5rem;
+    .home .home-content h1 {
+        font-size: 4rem;
     }
 
     .home-content h3 {
@@ -591,5 +594,9 @@ span {
     }
     .projects-container {
         grid-template-columns: 1fr; /* 1 Kolom menyusun ke bawah di HP */
+    }
+
+    .header a {
+        font-size: 1.5rem;
     }
 }
