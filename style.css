@@ -538,9 +538,10 @@ span {
         font-size: 4rem; 
     }
     .heading a{
-        font-size: 2rem;
-   
-    
+        font-size: 2rem;
+    }
+
+
     /* --- PERBAIKAN TAMPILAN HOME HP --- */
     .home {
         flex-direction: column; /* Foto di atas, teks di bawah */
