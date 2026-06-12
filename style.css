@@ -569,7 +569,7 @@ span {
     }
 
     .home .home-content h1 {
-        font-size: 1rem;
+        font-size: 3.5rem;
     }
 
     .home-content h3 {
@@ -596,14 +596,4 @@ span {
         grid-template-columns: 1fr; /* 1 Kolom menyusun ke bawah di HP */
     }
 
-    .header a {
-        font-size: 1.5rem;
-    }
-    .home .home-content h1 {
-        font-size: 3.5rem;
-    }
-    .logo {
-        font-size: 2rem;
-    }
-    
 }
