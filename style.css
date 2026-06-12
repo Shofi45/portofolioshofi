@@ -1,0 +1,592 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth; /* Efek meluncur mulus saat menu diklik */
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+/* --- Header & Navbar Styling --- */
+header {
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px); /* Efek blur/glassmorphism */
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #3db5ff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: white;
+    cursor: pointer;
+    display: none; /* Disembunyikan di PC/Laptop */
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #3db5ff;
+    border-bottom: 3px solid #3db5ff;
+}
+
+/* --- Global Section Style --- */
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 5rem; /* Padding top ditambah agar konten tidak tertutup navbar */
+}
+
+.heading {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 4rem;
+}
+
+span {
+    color: #3db5ff;
+}
+
+/* --- Section Backgrounds --- */
+.home { background-color: black; }
+.services { background-color: #161616; }
+.skills { background-color: black; }
+.education { background-color: #161616; }
+.projects { background-color: black; }
+.contact { background-color: #161616; }
+
+/* --- Home Section --- */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+}
+
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+}
+
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img {
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    border: 3px solid #3db5ff; /* Bingkai biru */
+    box-shadow: 0 0 25px rgba(61, 181, 255, 0.6);
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover {
+    font-size: 1.8rem;
+    font-weight: 500;
+    transform: scale(1.05); /* Sedikit membesar saat di-hover */
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #3db5ff;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #3db5ff;
+}
+
+.social-icons a:hover {
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #3db5ff;
+    box-shadow: 0  0 25px #3db5ff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #3db5ff;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #3db5ff;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale3d(1.03);
+    background-color: #3db5ff;
+    color: black;
+    box-shadow: 0 0 25px #3db5ff;
+}
+
+/* --- Typing Animation --- */
+.typing-text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span {
+    position: relative;
+}
+
+.typing-text span::before {
+    content: "Graphic Designer";
+    color: #3db5ff;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid #3db5ff;
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 4s steps(14) infinite;
+}
+
+@keyframes cursor {
+    0%, 100% { border-left-color: #3db5ff; }
+    50% { border-left-color: transparent; }
+}
+
+@keyframes words {
+    0%, 20% { content: "3D Modeler"; }
+    21%, 40% { content: "UI/UX Designer"; }
+    41%, 60% { content: "Graphic Designer"; }
+    61%, 80% { content: "AI Engineer"; }
+    81%, 100% { content: "IoT Developer"; }
+}
+@keyframes typing {
+    0%, 100% { width: calc(100% + 8px); } /* Teks tertutup penuh */
+    30%, 70% { width: 0; } /* Teks terbuka / terbaca penuh */
+}
+
+/* --- Services Section --- */
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.service-box {
+    flex: 1 1 30rem;
+    background-color: black;
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: 0.2rem solid #161616;
+    transition: 0.4s ease;
+}
+
+.service-box:hover {
+    border-color: #3db5ff;
+    transform: scale(1.02);
+}
+
+.service-box i {
+    font-size: 7rem;
+    color: #3db5ff;
+    margin-bottom: 1rem;
+}
+
+.service-box h3 {
+    font-size: 2.6rem;
+}
+
+.service-box p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+    line-height: 1.5;
+}
+
+
+
+/* --- Skills Section --- */
+.skills-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 100rem; /* Sedikit diperlebar agar muat lebih leluasa */
+    margin: 0 auto;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Memastikan ikon dan teks rata kiri */
+    width: 300px; /* KUNCI KERAPIAN: Memberikan lebar tetap untuk semua kotak */
+    gap: 1.5rem;
+    background-color: #161616;
+    padding: 1.5rem 2.5rem;
+    border-radius: 1rem;
+    border: 0.1rem solid #3db5ff; /* Warna border diubah ke biru */
+    font-size: 1.8rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+/* Mengatur ukuran dan warna ikon di dalam kotak */
+.skill-item i {
+    font-size: 3.5rem;
+    color: #3db5ff; /* Warna ikon diubah ke biru */
+    width: 40px; /* Memberikan ruang tetap untuk ikon agar teks di sebelahnya sejajar lurus */
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+/* Efek saat kursor diarahkan ke kotak (Hover) */
+.skill-item:hover {
+    background-color: #3db5ff; /* Background hover diubah ke biru */
+    color: black;
+    box-shadow: 0 0 15px #3db5ff; /* Efek cahaya shadow diubah ke biru */
+}
+
+/* Mengubah warna ikon menjadi hitam saat di-hover agar kontras */
+.skill-item:hover i {
+    color: black;
+}
+
+
+/* --- Education Section --- */
+.edu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* Jarak antar kotak sedikit dilebarkan */
+    max-width: 85rem; /* Kotak sedikit diperlebar agar teks yang besar muat */
+    margin: 0 auto;
+}
+
+.edu-box {
+    background-color: black;
+    padding: 3rem; /* Padding diperbesar agar tidak sesak */
+    border-left: 0.5rem solid #3db5ff; /* Garis kiri sedikit ditebalkan */
+    border-radius: 1rem;
+    border: 0.1rem solid #333;
+    transition: 0.4s ease; /* Transisi mulus untuk efek hover */
+}
+
+/* Efek Hover Keren untuk Kotak Edukasi */
+.edu-box:hover {
+    transform: translateY(-5px) scale(1.02); /* Kotak agak terangkat dan membesar */
+    border-color: #3db5ff; /* Seluruh border jadi biru */
+    box-shadow: 0 0 20px rgba(61, 181, 255, 0.3); /* Cahaya biru lembut di sekitarnya */
+}
+
+/* Nama Kampus/Sekolah */
+.edu-box h4 {
+    font-size: 2.8rem; /* Diperbesar dari 2.2rem */
+    color: white;
+}
+
+/* Tahun & Jurusan */
+.edu-box span {
+    font-size: 1.8rem; /* Diperbesar dari 1.4rem */
+    color: #3db5ff;
+    display: block;
+    margin: 1.5rem 0;
+    font-weight: 500; /* Teks agak ditebalkan sedikit */
+}
+
+/* Teks Deskripsi */
+.edu-box p {
+    font-size: 1.7rem; /* Sedikit diperbesar */
+    line-height: 1.6; /* Jarak antar baris agar nyaman dibaca */
+}
+
+/* --- Projects Section Styling (Flexbox Center Layout) --- */
+.projects-container {
+    display: flex;
+    justify-content: center; /* MEMBUAT SEMUA KOTAK RATA TENGAH */
+    flex-wrap: wrap; /* Otomatis turun ke baris baru secara rapi jika ruang habis */
+    gap: 2.5rem; /* Jarak antar kotak project */
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.project-box {
+    position: relative;
+    flex: 1 1 28rem; /* Kotak melebar elastis dengan batas minimum lebar 28rem */
+    max-width: 38rem; /* Batas lebar maksimal agar tidak terlalu melar di layar lebar */
+    border-radius: 2rem;
+    overflow: hidden;
+    display: flex;
+    border: 0.2rem solid #333;
+    min-height: 250px; 
+    transition: 0.3s ease;
+}
+
+.project-box:hover {
+    border-color: #3db5ff;
+    box-shadow: 0 0 15px rgba(61, 181, 255, 0.4);
+}
+
+/* (Kode .project-box img dan .project-info biarkan sama persis seperti sebelumnya) */
+.project-box img {
+    width: 100%;
+    transition: 0.5s ease;
+    opacity: 0.8;
+}
+
+.project-box:hover img {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 4rem;
+    background: linear-gradient(rgba(0,0,0,0.4), #3db5ff);
+    transform: translateY(100%);
+    transition: 0.5s ease;
+}
+
+.project-box:hover .project-info {
+    transform: translateY(0);
+}
+
+.project-info h4 {
+    font-size: 3rem;
+    color: white;
+}
+
+.project-info p {
+    font-size: 1.6rem;
+    margin: 0.5rem 0 2rem;
+    color: white;
+}
+
+.project-info a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: white;
+    border-radius: 50%;
+    color: black;
+    font-size: 2rem;
+}
+
+/* --- Contact Section --- */
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: white;
+    background-color: black;
+    border-radius: 0.8rem;
+    margin: 0.7rem 0;
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+/* --- Footer --- */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background-color: black;
+}
+
+.footer p {
+    font-size: 1.6rem;
+}
+
+/* --- Responsive Adjustments (HP/Tablet) --- */
+@media (max-width: 1000px) {
+    .home {
+        gap: 4rem;
+    }
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 Kolom di Tablet */
+    }
+}
+
+@media (max-width: 995px) {
+    #menu-icon {
+        display: block; 
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
+        border-top: 0.1rem solid rgba(255,255,255,0.2);
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+        display: none; 
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        text-align: center;
+    }
+    
+    .heading {
+        font-size: 4rem; 
+    }
+   
+    
+    /* --- PERBAIKAN TAMPILAN HOME HP --- */
+    .home {
+        flex-direction: column; /* Foto di atas, teks di bawah */
+        padding-top: 14rem; /* Jarak agar foto tidak tertutup navbar */
+        margin: 0;
+        text-align: center; /* Membuat teks rata tengah */
+    }
+
+    .home-img img {
+        width: 60%;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%; 
+        object-fit: cover;
+        margin-top: 0;
+    }
+
+    /* Membuat wadah teks rata tengah */
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .home-content h1 {
+        font-size: 4.5rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .home-content p {
+        font-size: 1.5rem;
+        max-width: 90%; /* Agar teks tidak terlalu mepet tepi layar */
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center; /* Ikon sosmed ke tengah */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact form .input-box input {
+        width: 100%;
+    }
+    .projects-container {
+        grid-template-columns: 1fr; /* 1 Kolom menyusun ke bawah di HP */
+    }
+}
