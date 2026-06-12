@@ -537,6 +537,8 @@ span {
     .heading {
         font-size: 4rem; 
     }
+    .heading a{
+        font-size: 2rem;
    
     
     /* --- PERBAIKAN TAMPILAN HOME HP --- */
